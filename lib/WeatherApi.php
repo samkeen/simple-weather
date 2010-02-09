@@ -61,12 +61,21 @@ class WeatherApi {
             $this->weather[$index]=$this->weather["today{$plus}"];
             $plus = "+".($index+1);
         }
-        var_dump($this->weather);die;
+        var_dump($this->weather);
     }
+    
+    public function description() {
+        $desc = '';
+        $intensity = !empty ($this->weather[0]['weather_txt']['intensity'])?"{$this->weather[0]['weather_txt']['intensity']} ":"";
+        $desc = "Today:{$intensity}{$this->weather[0]['weather_txt']['weather-type']}";
+        $desc .= " precip-day%:{$this->weather[0]['precip_probability_day']} precip-eve%:{$this->weather[0]['precip_probability_night']}";
+        return $desc;
+    }
+
     
     private function construct_weather_summary(SimpleXMLElement $summary_element) {
         $summary = array();
-        $summary['text']=isset($summary_element['weather-summary'])?(string)$summary_element['weather-summary']:'';
+        $summary['api_text']=isset($summary_element['weather-summary'])?(string)$summary_element['weather-summary']:'';
         if($value = $summary_element->value) {
             $summary['coverage'] = isset($value['coverage'])&&$value['coverage']!='none'?(string)$value['coverage']:null;
             $summary['intensity'] = isset($value['intensity'])&&$summary_element['intensity']!='none'?(string)$value['intensity']:null;

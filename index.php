@@ -11,7 +11,8 @@ require "./lib/WeatherApi.php";
         <?php
         $weather = new WeatherApi();
         // ({start date}, {num days to recover})
-        $weather->get_24h_weather('97214',date('Y-m-d',strtotime('Tomorrow')),3);
+        $weather->get_24h_weather('97214',date('Y-m-d',strtotime('Tomorrow')),2);
+        var_dump($weather->description());
         ?>
     </body>
 </html>
