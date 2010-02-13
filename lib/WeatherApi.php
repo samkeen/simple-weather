@@ -3,6 +3,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+require dirname(__FILE__).'/Util.php';
 class WeatherApi {
 
     // ?zipCodeList=97214&format=24+hourly&startDate=2010-02-04&numDays=2
@@ -19,26 +20,40 @@ class WeatherApi {
         'precip_pobability' => '/dwml/data/parameters/probability-of-precipitation/value'
     );
 
+    private $params;
+
     private $weather = array();
-    public function  __construct() {
+    public function  __construct(array $params=array()) {
+        $this->params = array_merge(
+            array(
+                'cache_path' => realpath(dirname(__FILE__).'/../cache'),
+            ),
+            $params
+
+        );
         
     }
     public function next_n_days_forcast($zipcode,$num_days_to_retrieve) {
 
     }
-
-    public function get_24h_weather($zip_code, $start_date, $num_days_to_retrieve) {
-        $api_uri = $this->build_api_uri($zip_code, $start_date, $num_days_to_retrieve);
-        var_dump($api_uri);
-        $weather_xml = file_get_contents(dirname(__FILE__).'/test-noaa.xml');
-        $weather_xml = file_get_contents($api_uri);
-        if( ! $weather_xml) {
-            throw new Exception("ERROR getting xml from API");
+    public function cache_weather($zip_code, $start_date, $num_days_to_retrieve,$force_overwrite=false) {
+        $cache_file_name = "{$this->params['cache_path']}/{$zip_code}:".date('Y-m-d',$start_date).":{$num_days_to_retrieve}.xml";
+        if( $force_overwrite || ! file_exists($cache_file_name)) {
+            $api_uri = $this->build_api_uri($zip_code, date('Y-m-d',$start_date), $num_days_to_retrieve);
+            $weather_xml = file_get_contents($api_uri);
+            if( ! $weather_xml) {
+                throw new Exception("ERROR getting xml from API");
+            }
+            Util::write_output_file($cache_file_name, $weather_xml);
         }
-//        print_r($weather_xml);die;
-        $this->pull_paths(new SimpleXMLElement($weather_xml));
+        return $cache_file_name;
     }
-    private function pull_paths(SimpleXMLElement $weather_xml) {
+    public function get_24h_weather($zip_code, $start_date, $num_days_to_retrieve) {
+        $cache_file_name = $this->cache_weather($zip_code, $start_date, $num_days_to_retrieve);
+        $this->pull_paths($cache_file_name);
+    }
+    private function pull_paths($weather_xml_path) {
+        $weather_xml = new SimpleXMLElement($weather_xml_path,null,true);
         $paths = $this->weather_data_paths;
         $hi_temps = $weather_xml->xpath($paths['hi_temp']);
         $low_temps = $weather_xml->xpath($paths['low_temp']);
