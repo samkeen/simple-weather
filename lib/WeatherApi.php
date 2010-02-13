@@ -37,7 +37,7 @@ class WeatherApi {
 
     }
     public function cache_weather($zip_code, $start_date, $num_days_to_retrieve,$force_overwrite=false) {
-        $cache_file_name = "{$this->params['cache_path']}/{$zip_code}:".date('Y-m-d',$start_date).":{$num_days_to_retrieve}.xml";
+        $cache_file_name = "{$this->params['cache_path']}/{$zip_code}_".date('Y-m-d',$start_date)."_{$num_days_to_retrieve}.xml";
         if( $force_overwrite || ! file_exists($cache_file_name)) {
             $api_uri = $this->build_api_uri($zip_code, date('Y-m-d',$start_date), $num_days_to_retrieve);
             $weather_xml = file_get_contents($api_uri);
@@ -53,7 +53,8 @@ class WeatherApi {
         $this->pull_paths($cache_file_name);
     }
     private function pull_paths($weather_xml_path) {
-        $weather_xml = new SimpleXMLElement($weather_xml_path,null,true);
+        var_dump($weather_xml_path);
+        $weather_xml = Util::digest_xml_file($weather_xml_path);
         $paths = $this->weather_data_paths;
         $hi_temps = $weather_xml->xpath($paths['hi_temp']);
         $low_temps = $weather_xml->xpath($paths['low_temp']);
