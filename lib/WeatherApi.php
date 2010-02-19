@@ -36,6 +36,21 @@ class WeatherApi {
     public function next_n_days_forcast($zipcode,$num_days_to_retrieve) {
 
     }
+    /**
+     * It calls the API, record the weather and writes it to a cache file.
+     * Then for calls of get_24hr_periods, this cache can be checked and used if
+     * there is a hit, rather than calling the API direct every time.
+     * Note: this method is meant to be called by a batch process (such as cron).
+     * So for instance we can make all the API calls at 3am for the next few days
+     * weather, then calls at anytime during the day (even after the 6am cutoff
+     * point) get the cached response
+     *
+     * @param string $zip_code
+     * @param int $start_date
+     * @param int $num_days_to_retrieve
+     * @param boolean $force_overwrite
+     * @return string Full path to the cache file.
+     */
     public function cache_weather($zip_code, $start_date, $num_days_to_retrieve,$force_overwrite=false) {
         $cache_file_name = "{$this->params['cache_path']}/{$zip_code}_".date('Y-m-d',$start_date)."_{$num_days_to_retrieve}.xml";
         if( $force_overwrite || ! file_exists($cache_file_name)) {
@@ -48,11 +63,18 @@ class WeatherApi {
         }
         return $cache_file_name;
     }
-    public function get_24h_weather($zip_code, $start_date, $num_days_to_retrieve) {
+    /**
+     * Return n number ($num_days_to_retrieve) of summarized 24h period
+     * forcasts.  Starting from (and including) $start_date.
+     * @param string $zip_code
+     * @param int $start_date
+     * @param int $num_days_to_retrieve
+     */
+    public function get_24h_periods($zip_code, $start_date, $num_days_to_retrieve) {
         $cache_file_name = $this->cache_weather($zip_code, $start_date, $num_days_to_retrieve);
-        $this->pull_paths($cache_file_name);
+        $this->digest_weather_xml($cache_file_name);
     }
-    private function pull_paths($weather_xml_path) {
+    private function digest_weather_xml($weather_xml_path) {
         var_dump($weather_xml_path);
         $weather_xml = Util::digest_xml_file($weather_xml_path);
         $paths = $this->weather_data_paths;
@@ -63,28 +85,30 @@ class WeatherApi {
         $forecast_start_times = $weather_xml->xpath($paths['forecast_start_time']);
         $forecast_end_times = $weather_xml->xpath($paths['forecast_end_time']);
         $precip_probabilities = $weather_xml->xpath($paths['precip_pobability']);
-        $plus = '';
         for($index=0;$index<count($hi_temps);$index++) {
-            $this->weather["today{$plus}"] = array(
-                'temp_low'         =>  isset($low_temps[$index])?(string)$low_temps[$index]:null,
-                'temp_high'         => isset($hi_temps[$index])?(string)$hi_temps[$index]:null,
-                'weather_txt'   =>  isset($summary[$index])?self::construct_weather_summary($summary[$index]):null,
-                'start_time' =>  isset($forecast_start_times[$index])?(string)strtotime($forecast_start_times[$index]):null,
-                'end_time' =>  isset($forecast_end_times[$index])?(string)strtotime($forecast_end_times[$index]):null,
-                'precip_probability_day' =>  isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null,
-                'precip_probability_night' => isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null
-            );
-            $this->weather[$index]=$this->weather["today{$plus}"];
-            $plus = "+".($index+1);
+            $date_of_weather = isset($forecast_start_times[$index])?(string)strtotime($forecast_start_times[$index]):null;
+            if($date_of_weather) {
+                $this->weather[date('Y-m-d',$date_of_weather)] = array(
+                    'temp_low'         =>  isset($low_temps[$index])?(string)$low_temps[$index]:null,
+                    'temp_high'         => isset($hi_temps[$index])?(string)$hi_temps[$index]:null,
+                    'weather_txt'   =>  isset($summary[$index])?self::construct_weather_summary($summary[$index]):null,
+                    'start_time' =>  $date_of_weather,
+                    'end_time' =>  isset($forecast_end_times[$index])?(string)strtotime($forecast_end_times[$index]):null,
+                    'precip_probability_day' =>  isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null,
+                    'precip_probability_night' => isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null
+                );
+            }
         }
         var_dump($this->weather);
     }
     
     public function description() {
         $desc = '';
-        $intensity = !empty ($this->weather[0]['weather_txt']['intensity'])?"{$this->weather[0]['weather_txt']['intensity']} ":"";
-        $desc = "Today:{$intensity}{$this->weather[0]['weather_txt']['weather-type']}";
-        $desc .= " precip-day%:{$this->weather[0]['precip_probability_day']} precip-eve%:{$this->weather[0]['precip_probability_night']}";
+        foreach ($this->weather as $date => $weather) {
+            $intensity = !empty ($weather['weather_txt']['intensity'])?"{$weather['weather_txt']['intensity']} ":"";
+            $desc .= "{$date}:{$intensity}{$weather['weather_txt']['weather-type']}";
+            $desc .= " precip%day:{$weather['precip_probability_day']} precip%eve:{$weather['precip_probability_night']}";
+        }
         return $desc;
     }
 
