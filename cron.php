@@ -16,7 +16,7 @@ if($argc) {
 
       With the --help, -help, -h, or -? options, you can get this help.
     <?php } else {
-        require "./lib/WeatherApi.php";
+        require dirname(__FILE__)."/lib/WeatherApi.php";
         $zipcode = $argv[1];
         $start_date = strtotime($argv[2]);
         $days_to_collect = (int)$argv[3];
