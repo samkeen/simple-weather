@@ -75,29 +75,36 @@ class WeatherApi {
         $this->digest_weather_xml($cache_file_name);
     }
     private function digest_weather_xml($weather_xml_path) {
-        var_dump($weather_xml_path);
-        $weather_xml = Util::digest_xml_file($weather_xml_path);
-        $paths = $this->weather_data_paths;
-        $hi_temps = $weather_xml->xpath($paths['hi_temp']);
-        $low_temps = $weather_xml->xpath($paths['low_temp']);
-        $summary = $weather_xml->xpath($paths['summary']);
-        $warnings = $weather_xml->xpath($paths['alert']);
-        $forecast_start_times = $weather_xml->xpath($paths['forecast_start_time']);
-        $forecast_end_times = $weather_xml->xpath($paths['forecast_end_time']);
-        $precip_probabilities = $weather_xml->xpath($paths['precip_pobability']);
-        for($index=0;$index<count($hi_temps);$index++) {
-            $date_of_weather = isset($forecast_start_times[$index])?(string)strtotime($forecast_start_times[$index]):null;
-            if($date_of_weather) {
-                $this->weather[date('Y-m-d',$date_of_weather)] = array(
-                    'temp_low'         =>  isset($low_temps[$index])?(string)$low_temps[$index]:null,
-                    'temp_high'         => isset($hi_temps[$index])?(string)$hi_temps[$index]:null,
-                    'weather_txt'   =>  isset($summary[$index])?self::construct_weather_summary($summary[$index]):null,
-                    'start_time' =>  $date_of_weather,
-                    'end_time' =>  isset($forecast_end_times[$index])?(string)strtotime($forecast_end_times[$index]):null,
-                    'precip_probability_day' =>  isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null,
-                    'precip_probability_night' => isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null
-                );
+        var_dump(pathinfo($weather_xml_path));
+        $path_info = pathinfo($weather_xml_path);
+        $processed_file = "{$path_info['dirname']}/{$path_info['filename']}.processed.json";
+        if(Util::file_exists_and_readable($processed_file)) {
+            $this->weather = json_decode(file_get_contents($processed_file), true);
+        } else {
+            $weather_xml = Util::digest_xml_file($weather_xml_path);
+            $paths = $this->weather_data_paths;
+            $hi_temps = $weather_xml->xpath($paths['hi_temp']);
+            $low_temps = $weather_xml->xpath($paths['low_temp']);
+            $summary = $weather_xml->xpath($paths['summary']);
+            $warnings = $weather_xml->xpath($paths['alert']);
+            $forecast_start_times = $weather_xml->xpath($paths['forecast_start_time']);
+            $forecast_end_times = $weather_xml->xpath($paths['forecast_end_time']);
+            $precip_probabilities = $weather_xml->xpath($paths['precip_pobability']);
+            for($index=0;$index<count($hi_temps);$index++) {
+                $date_of_weather = isset($forecast_start_times[$index])?(string)strtotime($forecast_start_times[$index]):null;
+                if($date_of_weather) {
+                    $this->weather[date('Y-m-d',$date_of_weather)] = array(
+                        'temp_low'         =>  isset($low_temps[$index])?(string)$low_temps[$index]:null,
+                        'temp_high'         => isset($hi_temps[$index])?(string)$hi_temps[$index]:null,
+                        'weather_txt'   =>  isset($summary[$index])?self::construct_weather_summary($summary[$index]):null,
+                        'start_time' =>  $date_of_weather,
+                        'end_time' =>  isset($forecast_end_times[$index])?(string)strtotime($forecast_end_times[$index]):null,
+                        'precip_probability_day' =>  isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null,
+                        'precip_probability_night' => isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null
+                    );
+                }
             }
+            Util::write_output_file($processed_file, json_encode($this->weather));
         }
         var_dump($this->weather);
     }
