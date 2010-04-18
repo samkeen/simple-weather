@@ -9,10 +9,29 @@ require "./lib/WeatherApi.php";
     </head>
     <body>
         <?php
+        $here = dirname(__FILE__);
+        set_include_path(ini_get('include_path').":${here}/vendor/arc90-service-twitter/lib");
+
+
+
         $weather = new WeatherApi();
         // ({start date}, {num days to recover})
         $weather->get_24h_periods('97214',strtotime('Tomorrow'),2);
-        var_dump($weather->description());
+//        var_dump(strlen($weather->description()));die;
+
+        //        echo get_include_path();die;
+//
+//
+        require_once 'Arc90/Service/Twitter.php';
+
+        $username = '__test__test__';
+        $password = 'holycrap!';
+
+        $twitter  = new Arc90_Service_Twitter($username, $password);
+        $timeline = $twitter->test('json');
+        $timeline =  $twitter->updateStatus($weather->description(),'json');
+
+        echo($timeline);
         ?>
     </body>
 </html>

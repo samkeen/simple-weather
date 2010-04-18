@@ -33,8 +33,8 @@ class Util {
         if( ! file_exists($full_file_path)) {
             throw new Exception("file does not exist: {$full_file_path}");
         }
-        if(is_readable($full_file_path)) {
-            throw new Exception("file is not readable: {$full_file_path}");
+        if( ! is_readable($full_file_path)) {
+            throw new Exception("file/dir is not Writable: {$full_file_path}");
         }
         return true;
     }

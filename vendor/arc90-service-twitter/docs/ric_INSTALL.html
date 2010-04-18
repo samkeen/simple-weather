@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title></title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+											</head>
+		<body>
+						<div align="center"><h1>INSTALL</h1></div>
+<pre>
+INSTALLATION
+------------
+
+Arc90_Service_Twitter requires no special installation steps;
+simply copy the contents of the /lib directory to your PHP include path.
+
+See &quot;CONFIGURING THE INCLUDE PATH&quot; below for more info.
+
+SYSTEM REQUIREMENTS
+-------------------
+
+Arc90_Service_Twitter requires PHP 5.1.4 or later and libcurl 7.10.5 or later.
+
+You can find more information about installing curl here:
+
+http://www.php.net/manual/en/curl.installation.php
+
+CONFIGURING THE INCLUDE PATH
+----------------------------
+
+To use Arc90_Service_Twitter, your application will need to access the
+library classes. Though there are several ways to achieve this, your
+PHP include_path needs to contain the path to the classes under the
+/lib directory in this distribution.
+
+You can find out more about the PHP include_path configuration directive here:
+
+http://www.php.net/manual/en/ini.core.php#ini.include-path
+
+Instructions on how to change PHP configuration directives can be found here:
+
+http://www.php.net/manual/en/configuration.changes.php
+
+GETTING STARTED
+---------------
+
+require_once 'Arc90/Service/Twitter.php';
+
+$username = 'user';
+$password = 'pass';
+
+$twitter  = new Arc90_Service_Twitter($username, $password);
+$timeline =  $twitter-&gt;getFriendsTimeline('xml');
+
+echo($timeline);
+
+</pre>
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 08 Sep 2009 22:02:58 -0400 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>

@@ -1,0 +1,3392 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Arc90_Service_Twitter</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Arc90_Service_Twitter</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Arc90_Service_Twitter provides methods for interacting with the <a href="http://twitter.com">Twitter</a> API.</p>
+<p class="description"><p>Based on Twitter's <a href="http://apiwiki.twitter.com/REST+API+Documentation">online documentation</a>.</p><p>NOTE: At the time of this writing, clients are allowed 100 requests per 60 sixty minute time period,  starting from their first request. For more information, please see the API documentation regarding  <a href="http://apiwiki.twitter.com/REST+API+Documentation#RateLimiting">rate limiting</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Matt Williams &lt;<a href="mailto:matt@mattwilliamsnyc.com">matt@mattwilliamsnyc.com</a>&gt;</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2008 <a href="http://arc90.com">Arc90 Inc.</a>, Matt Williams</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---Arc90---Service---Twitter.php.html">/lib/Arc90/Service/Twitter.php</a> (line <span class="field">41</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#API_URI" title="details" class="const-name">API_URI</a> = 					<span class="var-type"> 'twitter.com'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#DEFAULT_ENCODING" title="details" class="const-name">DEFAULT_ENCODING</a> = 					<span class="var-type"> 'UTF-8'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_BGIMAGE" title="details" class="const-name">PATH_ACCT_BGIMAGE</a> = 					<span class="var-type"> '/account/update_profile_background_image'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_COLORS" title="details" class="const-name">PATH_ACCT_COLORS</a> = 					<span class="var-type"> '/account/update_profile_colors'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_DEVICE" title="details" class="const-name">PATH_ACCT_DEVICE</a> = 					<span class="var-type"> '/account/update_delivery_device'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_END_SESS" title="details" class="const-name">PATH_ACCT_END_SESS</a> = 					<span class="var-type"> '/account/end_session'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_IMAGE" title="details" class="const-name">PATH_ACCT_IMAGE</a> = 					<span class="var-type"> '/account/update_profile_image'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_LIMIT" title="details" class="const-name">PATH_ACCT_LIMIT</a> = 					<span class="var-type"> '/account/rate_limit_status'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_LOCATION" title="details" class="const-name">PATH_ACCT_LOCATION</a> = 					<span class="var-type"> '/account/update_location'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_PROFILE" title="details" class="const-name">PATH_ACCT_PROFILE</a> = 					<span class="var-type"> '/account/update_profile'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_ACCT_VERIFY" title="details" class="const-name">PATH_ACCT_VERIFY</a> = 					<span class="var-type"> '/account/verify_credentials'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_BLOCK_CREATE" title="details" class="const-name">PATH_BLOCK_CREATE</a> = 					<span class="var-type"> '/blocks/create'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_BLOCK_DESTROY" title="details" class="const-name">PATH_BLOCK_DESTROY</a> = 					<span class="var-type"> '/blocks/destroy'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_DM_DESTROY" title="details" class="const-name">PATH_DM_DESTROY</a> = 					<span class="var-type"> '/direct_messages/destroy'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_DM_MESSAGES" title="details" class="const-name">PATH_DM_MESSAGES</a> = 					<span class="var-type"> '/direct_messages'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_DM_NEW" title="details" class="const-name">PATH_DM_NEW</a> = 					<span class="var-type"> '/direct_messages/new'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_DM_SENT" title="details" class="const-name">PATH_DM_SENT</a> = 					<span class="var-type"> '/direct_messages/sent'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_FAV_CREATE" title="details" class="const-name">PATH_FAV_CREATE</a> = 					<span class="var-type"> '/favorites/create'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_FAV_DESTROY" title="details" class="const-name">PATH_FAV_DESTROY</a> = 					<span class="var-type"> '/favorites/destroy'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_FAV_FAVORITES" title="details" class="const-name">PATH_FAV_FAVORITES</a> = 					<span class="var-type"> '/favorites'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_FRIEND_CREATE" title="details" class="const-name">PATH_FRIEND_CREATE</a> = 					<span class="var-type"> '/friendships/create'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_FRIEND_DESTROY" title="details" class="const-name">PATH_FRIEND_DESTROY</a> = 					<span class="var-type"> '/friendships/destroy'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_FRIEND_EXISTS" title="details" class="const-name">PATH_FRIEND_EXISTS</a> = 					<span class="var-type"> '/friendships/exists'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_HELP_TEST" title="details" class="const-name">PATH_HELP_TEST</a> = 					<span class="var-type"> '/help/test'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_NOTIF_FOLLOW" title="details" class="const-name">PATH_NOTIF_FOLLOW</a> = 					<span class="var-type"> '/notifications/follow'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_NOTIF_LEAVE" title="details" class="const-name">PATH_NOTIF_LEAVE</a> = 					<span class="var-type"> '/notifications/leave'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_SG_FOLLOWERS" title="details" class="const-name">PATH_SG_FOLLOWERS</a> = 					<span class="var-type"> '/followers/ids'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_SG_FRIENDS" title="details" class="const-name">PATH_SG_FRIENDS</a> = 					<span class="var-type"> '/friends/ids'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_STATUS_DESTROY" title="details" class="const-name">PATH_STATUS_DESTROY</a> = 					<span class="var-type"> '/statuses/destroy'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_STATUS_FRIENDS" title="details" class="const-name">PATH_STATUS_FRIENDS</a> = 					<span class="var-type"> '/statuses/friends_timeline'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_STATUS_MENTIONS" title="details" class="const-name">PATH_STATUS_MENTIONS</a> = 					<span class="var-type"> '/statuses/mentions'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_STATUS_PUBLIC" title="details" class="const-name">PATH_STATUS_PUBLIC</a> = 					<span class="var-type"> '/statuses/public_timeline'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_STATUS_SHOW" title="details" class="const-name">PATH_STATUS_SHOW</a> = 					<span class="var-type"> '/statuses/show'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_STATUS_UPDATE" title="details" class="const-name">PATH_STATUS_UPDATE</a> = 					<span class="var-type"> '/statuses/update'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_STATUS_USER" title="details" class="const-name">PATH_STATUS_USER</a> = 					<span class="var-type"> '/statuses/user_timeline'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_USER_FOLLOWERS" title="details" class="const-name">PATH_USER_FOLLOWERS</a> = 					<span class="var-type"> '/statuses/followers'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_USER_FRIENDS" title="details" class="const-name">PATH_USER_FRIENDS</a> = 					<span class="var-type"> '/statuses/friends'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_USER_SHOW" title="details" class="const-name">PATH_USER_SHOW</a> = 					<span class="var-type"> '/users/show'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#STATUS_MAXLENGTH" title="details" class="const-name">STATUS_MAXLENGTH</a> = 					<span class="var-type"> 140</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_authPassword" title="details" class="var-name">$_authPassword</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_authUsername" title="details" class="var-name">$_authUsername</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_callback" title="details" class="var-name">$_callback</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_suppressResponseCodes" title="details" class="var-name">$_suppressResponseCodes</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$_timeout" title="details" class="var-name">$_timeout</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_useSSL" title="details" class="var-name">$_useSSL</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_verifyHostSSL" title="details" class="var-name">$_verifyHostSSL</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_verifyPeerSSL" title="details" class="var-name">$_verifyPeerSSL</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																																																																											
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#_throwException" title="details" class="method-name">_throwException</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#_validateOption" title="details" class="method-name">_validateOption</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$options</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#_validatePositiveInteger" title="details" class="method-name">_validatePositiveInteger</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																			
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Arc90_Service_Twitter</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$source</span> = <span class="var-default">''</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">10</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#block" title="details" class="method-name">block</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#createFavorite" title="details" class="method-name">createFavorite</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#createFriendship" title="details" class="method-name">createFriendship</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#destroyFavorite" title="details" class="method-name">destroyFavorite</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#destroyFriendship" title="details" class="method-name">destroyFriendship</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#destroyMessage" title="details" class="method-name">destroyMessage</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#destroyStatus" title="details" class="method-name">destroyStatus</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#endSession" title="details" class="method-name">endSession</a>
+										()
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#follow" title="details" class="method-name">follow</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#friendshipExists" title="details" class="method-name">friendshipExists</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_a</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_b</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getFavorites" title="details" class="method-name">getFavorites</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getFollowers" title="details" class="method-name">getFollowers</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getFriends" title="details" class="method-name">getFriends</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getFriendsTimeline" title="details" class="method-name">getFriendsTimeline</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getMentions" title="details" class="method-name">getMentions</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getMessages" title="details" class="method-name">getMessages</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getPublicTimeline" title="details" class="method-name">getPublicTimeline</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getRateLimitStatus" title="details" class="method-name">getRateLimitStatus</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#getReplies" title="details" class="method-name">getReplies</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getSentMessages" title="details" class="method-name">getSentMessages</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#getUserTimeline" title="details" class="method-name">getUserTimeline</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#graphFollowers" title="details" class="method-name">graphFollowers</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">''</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#graphFriends" title="details" class="method-name">graphFriends</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">''</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#leave" title="details" class="method-name">leave</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$user</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter_Search/Arc90_Service_Twitter_Search.html">Arc90_Service_Twitter_Search</a></span>
+										<a href="#searchApi" title="details" class="method-name">searchApi</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span> = <span class="var-default">''</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#sendMessage" title="details" class="method-name">sendMessage</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+										<a href="#setAuth" title="details" class="method-name">setAuth</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+										<a href="#setCallback" title="details" class="method-name">setCallback</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+										<a href="#setSSL" title="details" class="method-name">setSSL</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$useSSL</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$verifyPeer</span> = <span class="var-default">TRUE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$verifyHost</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+										<a href="#setTimeout" title="details" class="method-name">setTimeout</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#showStatus" title="details" class="method-name">showStatus</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#showUser" title="details" class="method-name">showUser</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$email</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+										<a href="#suppressResponseCodes" title="details" class="method-name">suppressResponseCodes</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$suppress</span> = <span class="var-default">TRUE</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#test" title="details" class="method-name">test</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#unblock" title="details" class="method-name">unblock</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$user</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#updateDeliveryDevice" title="details" class="method-name">updateDeliveryDevice</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$device</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#updateLocation" title="details" class="method-name">updateLocation</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$location</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#updateProfile" title="details" class="method-name">updateProfile</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#updateProfileBackgroundImage" title="details" class="method-name">updateProfileBackgroundImage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$image</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#updateProfileColors" title="details" class="method-name">updateProfileColors</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#updateProfileImage" title="details" class="method-name">updateProfileImage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$image</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#updateStatus" title="details" class="method-name">updateStatus</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$status</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$in_reply_to_status_id</span> = <span class="var-default">0</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#verifyCredentials" title="details" class="method-name">verifyCredentials</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#_buildQueryString" title="details" class="method-name">_buildQueryString</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$allowed</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#_sendRequest" title="details" class="method-name">_sendRequest</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$auth</span> = <span class="var-default">TRUE</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span> = <span class="var-default">'GET'</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">''</span>])
+									</div>
+																																			</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_authPassword" id="$_authPassword"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_authPassword</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">132</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Twitter account password</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_authUsername" id="$_authUsername"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_authUsername</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">125</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Twitter account username</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_callback" id="$_callback"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_callback</span>
+						(line <span class="line-number">139</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html#methodsetCallback">setCallback()</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_suppressResponseCodes" id="$_suppressResponseCodes"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_suppressResponseCodes</span>
+			 = <span class="var-default"> FALSE</span>			(line <span class="line-number">146</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html#methodsuppressResponseCodes">suppressResponseCodes()</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_timeout" id="$_timeout"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$_timeout</span>
+			 = <span class="var-default"> 10</span>			(line <span class="line-number">153</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html#methodsetTimeout">setTimeout()</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_useSSL" id="$_useSSL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_useSSL</span>
+			 = <span class="var-default"> TRUE</span>			(line <span class="line-number">160</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html#methodsetSSL">setSSL()</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_verifyHostSSL" id="$_verifyHostSSL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_verifyHostSSL</span>
+			 = <span class="var-default"> TRUE</span>			(line <span class="line-number">167</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html#methodsetSSL">setSSL()</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_verifyPeerSSL" id="$_verifyPeerSSL"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_verifyPeerSSL</span>
+			 = <span class="var-default"> TRUE</span>			(line <span class="line-number">174</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html#methodsetSSL">setSSL()</a></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method_throwException" id="_throwException"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static _throwException</span> (line <span class="line-number">1623</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Throws an Arc90_Service_Twitter_Exception.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			_throwException
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: Message to be provided with the exception</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_validateOption" id="_validateOption"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static _validateOption</span> (line <span class="line-number">1592</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validates an option against a set of allowed options.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			_validateOption
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$option</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$option</span><span class="var-description">: Option to validate</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Array of allowed option values</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_validatePositiveInteger" id="_validatePositiveInteger"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static _validatePositiveInteger</span> (line <span class="line-number">1608</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Verifies that a given value is either a positive integer or a string representing a positive integer.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			_validatePositiveInteger
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Name of the field being verified</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: Value of the field being verified</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">186</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructs a new Twitter Web Service Client.</p>
+<p class="description"><p>User credentials may optionally be set as constructor parameters.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Arc90_Service_Twitter</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$source</span> = <span class="var-default">''</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">10</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: Twitter account username</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: Twitter account password</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$source</span><span class="var-description">: No longer used - deprecated for non-OAuth apps</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeout</span><span class="var-description">: Length of time (in seconds) before timeout</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodblock" id="block"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">block</span> (line <span class="line-number">1423</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Blocks the user specified in the ID parameter as the authenticating user.</p>
+<p class="description"><p>Returns the blocked user in the requested format when successful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://help.twitter.com/index.php?pg=kb.page&id=69">http://help.twitter.com/index.php?pg=kb.page&amp;id=69</a></li>
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			block
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID or screen name of the user to block</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateFavorite" id="createFavorite"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">createFavorite</span> (line <span class="line-number">1317</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Favorites the status specified in the ID parameter as the authenticating user.</p>
+<p class="description"><p>Returns the favorite status when successful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			createFavorite
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID of the status to favorite</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateFriendship" id="createFriendship"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">createFriendship</span> (line <span class="line-number">860</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Befriends the user specified in the ID parameter as the authenticating user.</p>
+<p class="description"><p>Returns the befriended user in the requested format when successful.</p><p>Returns a string describing the failure condition when unsuccessful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			createFriendship
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID or screen name of the user to befriend</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddestroyFavorite" id="destroyFavorite"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">destroyFavorite</span> (line <span class="line-number">1342</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Un-favorites the status specified in the ID parameter as the authenticating user.</p>
+<p class="description"><p>Returns the un-favorited status in the requested format when successful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			destroyFavorite
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID of the status to un-favorite</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddestroyFriendship" id="destroyFriendship"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">destroyFriendship</span> (line <span class="line-number">886</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Discontinues friendship with the user specified in the ID parameter as the authenticating user.</p>
+<p class="description"><p>Returns the un-friended user in the requested format when successful.</p><p>Returns a string describing the failure condition when unsuccessful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			destroyFriendship
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID or screen name of the user with whom to discontinue friendship</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddestroyMessage" id="destroyMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">destroyMessage</span> (line <span class="line-number">833</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Destroys the direct message specified in the required ID parameter.</p>
+<p class="description"><p>The authenticating user must be the recipient of the specified direct message.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			destroyMessage
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID of the direct message to destroy</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddestroyStatus" id="destroyStatus"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">destroyStatus</span> (line <span class="line-number">541</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Destroys the status specified by the required ID parameter.</p>
+<p class="description"><p>The authenticating user must be the author of the specified status.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			destroyStatus
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID of the status to destroy</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodendSession" id="endSession"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">endSession</span> (line <span class="line-number">1028</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Ends the session of the authenticating user, returning a null cookie.</p>
+<p class="description"><p>Use this method to sign users out of client-facing applications like widgets.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			endSession
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodfollow" id="follow"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">follow</span> (line <span class="line-number">1370</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enables notifications for updates from the specified user to the authenticating user.</p>
+<p class="description"><p>Returns the specified user when successful.</p><p>NOTE: The Notification Methods require the authenticated user to already be friends with the specified user.  Otherwise the error &quot;there was a problem following the specified user&quot; will be returned.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			follow
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID or screen name of the user to follow</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfriendshipExists" id="friendshipExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">friendshipExists</span> (line <span class="line-number">909</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tests if a friendship exists between two users.</p>
+<p class="description"><p>Formats: xml, json, none</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			friendshipExists
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_a</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_b</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$user_a</span><span class="var-description">: The ID or screen name of the first user to test friendship for</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$user_b</span><span class="var-description">: The ID or screen name of the second user to test friendship for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFavorites" id="getFavorites"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFavorites</span> (line <span class="line-number">1278</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the 20 most recent favorite statuses for the authenticating user or user specified by the ID parameter.</p>
+<p class="description"><p>Optional Query Parameters:</p><p><ul><li><strong>id</strong>:
+    The ID or screen name of the user for whom to request a list of favorite statuses.</li><li><strong>page</strong>:
+    Returns a specified page of results (20 results per page).</li></ul></p><p>Formats: xml, json, rss, atom</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getFavorites
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFollowers" id="getFollowers"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFollowers</span> (line <span class="line-number">634</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the authenticating user's followers, each with current status inline.</p>
+<p class="description"><p>They are ordered by the order in which they joined Twitter (this is going to be changed).</p><p>Optional Query Parameters:</p><p><ul><li><strong>id</strong>:
+    The ID or screen name of the user for whom to request a list of followers.</li><li><strong>page</strong>:
+    Retrieves the next 100 followers.</li><li><strong>lite</strong>:
+    Prevents the inline inclusion of current status. Must be set to a value of true.</li></ul></p><p>Formats: xml, json</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getFollowers
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFriends" id="getFriends"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFriends</span> (line <span class="line-number">588</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns up to 100 of the authenticating user's friends who have most recently updated,  each with current status inline.</p>
+<p class="description"><p>It's also possible to request another user's recent friends list via the id parameter below.</p><p>Optional Query Parameters:</p><p><ul><li><strong>id</strong>:
+    The ID or screen name of the user for whom to request a list of friends.</li><li><strong>page</strong>:
+    Retrieves the next 100 friends.</li><li><strong>lite</strong>:
+    Prevents the inline inclusion of current status. Must be set to a value of true.</li><li><strong>since</strong>:
+    Narrows results to statuses created after the specified date, up to 24 hours old.</li></ul></p><p>Formats: xml, json</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getFriends
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetFriendsTimeline" id="getFriendsTimeline"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getFriendsTimeline</span> (line <span class="line-number">346</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the 20 most recent statuses posted by the authenticating user and that user's friends.</p>
+<p class="description"><p>This is the equivalent of /home on the Web.</p><p>Optional Query Parameters:</p><p><ul><li><strong>since</strong>:
+    Narrows results to statuses created after the specified date, up to 24 hours old.</li><li><strong>since_id</strong>:
+    Returns only statuses with an ID greater than (that is, more recent than) the specified ID.</li><li><strong>count</strong>:
+    Specifies the number of statuses to retrieve. May not be greater than 200.</li><li><strong>page</strong>:
+    Returns a specified page of results (default 20 results per page).</li></ul></p><p>Formats: xml, json, rss, atom</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getFriendsTimeline
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMentions" id="getMentions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getMentions</span> (line <span class="line-number">516</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the 20 most recent mentions (status updates containing @username) for the authenticating user.</p>
+<p class="description"><p>Optional Query Parameters:</p><p><ul><li><strong>page</strong>:
+    Returns a specified page of results (20 results per page).</li><li><strong>since</strong>:
+    Narrows results to statuses created after the specified date, up to 24 hours old.</li><li><strong>since_id</strong>:
+    Returns only statuses with an ID greater (more recent) than the specified ID.</li></ul></p><p>Formats: xml, json, rss, atom</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getMentions
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMessages" id="getMessages"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getMessages</span> (line <span class="line-number">738</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a list of the 20 most recent direct messages sent to the authenticating user.</p>
+<p class="description"><p>The XML and JSON versions include detailed information about the sending and recipient users.</p><p>Optional Query Parameters:</p><p><ul><li><strong>page</strong>:
+    Retrieves the 20 next most recent direct messages.</li><li><strong>since</strong>:
+    Narrows resulting list of direct messages to those sent after the specified date, up to 24 hours old.</li><li><strong>since_id</strong>:
+    Returns only direct messages with an ID greater (that is, more recent) than the specified ID.</li></ul></p><p>Formats: xml, json, rss, atom</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getMessages
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPublicTimeline" id="getPublicTimeline"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getPublicTimeline</span> (line <span class="line-number">301</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the 20 most recent statuses from non-protected users who have set a custom user icon.</p>
+<p class="description"><p>Does not require authentication.</p><p>Note that the public timeline is cached for 60 seconds so requesting it more often is a waste of resources.</p><p>Formats: xml, json, rss, atom</p><p>API limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getPublicTimeline
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRateLimitStatus" id="getRateLimitStatus"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getRateLimitStatus</span> (line <span class="line-number">1201</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the remaining number of API requests available to the authenticating user before the API limit  is reached for the current hour.</p>
+<p class="description"><p>Calls to rate_limit_status require authentication, but will not count against the rate limit.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getRateLimitStatus
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetReplies" id="getReplies"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getReplies</span> (line <span class="line-number">481</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html#methodgetMentions">Arc90_Service_Twitter::getMentions()</a></li>
+				<li><span class="field">deprecated:</span> deprecated - forwards to getMentions()</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getReplies
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$format</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSentMessages" id="getSentMessages"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getSentMessages</span> (line <span class="line-number">780</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a list of the 20 most recent direct messages sent by the authenticating user.</p>
+<p class="description"><p>The XML and JSON versions include detailed information about the sending and recipient users.</p><p>Optional Query Parameters:</p><p><ul><li><strong>page</strong>:
+    Retrieves the 20 next most recent direct messages sent.</li><li><strong>since</strong>:
+    Narrows resulting list of direct messages to those sent after the specified date, up to 24 hours old.</li><li><strong>since_id</strong>:
+    Returns only sent direct messages with an ID greater (that is, more recent) than the specified ID.</li></ul></p><p>Formats: xml, json</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getSentMessages
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUserTimeline" id="getUserTimeline"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getUserTimeline</span> (line <span class="line-number">397</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the 20 most recent statuses posted from the authenticating user.</p>
+<p class="description"><p>It's also possible to request another user's timeline via the id parameter below.  This is the equivalent of the Web /archive page for your own user, or the profile page for a third party.</p><p>Optional Query Parameters:</p><p><ul><li><strong>id</strong>:
+    Specifies the ID or screen name of the user for whom to return the friends_timeline</li><li><strong>count</strong>:
+    Specifies the number of statuses to retrieve. May not be greater than 200.</li><li><strong>since</strong>:
+    Narrows results to statuses created after the specified date, up to 24 hours old.</li><li><strong>since_id</strong>:
+    Returns only statuses with an ID greater (more recent) than the specified ID.</li><li><strong>page</strong>:
+    Returns a specified page of results (default 20 results per page).</li></ul></p><p>Formats: xml, json, rss, atom</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			getUserTimeline
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: See method documentation for valid query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgraphFollowers" id="graphFollowers"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">graphFollowers</span> (line <span class="line-number">959</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of numeric IDs for every user the specified user is followed by.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			graphFollowers
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$user</span><span class="var-description">: ID or screen_name of the user to retrieve the followers ID list for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgraphFriends" id="graphFriends"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">graphFriends</span> (line <span class="line-number">934</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array of numeric IDs for every user the specified user is following.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			graphFriends
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$user</span><span class="var-description">: ID or screen_name of the user to retrieve the friends ID list for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodleave" id="leave"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">leave</span> (line <span class="line-number">1397</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Disables notifications for updates from the specified user to the authenticating user.</p>
+<p class="description"><p>Returns the specified user when successful.</p><p>NOTE: The Notification Methods require the authenticated user to already be friends with the specified user.  Otherwise the error &quot;there was a problem following the specified user&quot; will be returned.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			leave
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$user</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$user</span><span class="var-description">: The ID or screen name of the user to leave</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsearchApi" id="searchApi"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">searchApi</span> (line <span class="line-number">984</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a <a href="../../Arc90_Service/Twitter_Search/Arc90_Service_Twitter_Search.html">Twitter Search API client</a>.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Search_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter_Search/Arc90_Service_Twitter_Search.html">Arc90_Service_Twitter_Search</a></span>
+		<span class="method-name">
+			searchApi
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format; defaults to JSON</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$callback</span><span class="var-description">: Callback function used to wrap JSON responses as JSONP</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsendMessage" id="sendMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">sendMessage</span> (line <span class="line-number">808</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends a new direct message to the specified user from the authenticating user.</p>
+<p class="description"><p>Requires both the user and text parameters below.</p><p>Returns the sent message in the requested format when successful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			sendMessage
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$user</span><span class="var-description">: The ID or screen name of the recipient user.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$text</span><span class="var-description">: The text of your direct message. Must not exceed 140 characters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetAuth" id="setAuth"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setAuth</span> (line <span class="line-number">206</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set Twitter username and password.</p>
+<p class="description"><p>Provides a fluent interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+		<span class="method-name">
+			setAuth
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$password</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span><span class="var-description">: Twitter account username</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$password</span><span class="var-description">: Twitter account password</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCallback" id="setCallback"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCallback</span> (line <span class="line-number">223</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Used when requesting JSON formatted responses to wrap the response in a callback method (e.g. myFunction(...)).</p>
+<p class="description"><p>Callbacks may only contain alphanumeric characters and underscores; any invalid characters will be stripped.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+		<span class="method-name">
+			setCallback
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$callback</span><span class="var-description">: Name of the desired callback function wrapper</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSSL" id="setSSL"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setSSL</span> (line <span class="line-number">239</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Specifies whether to use SSL (https) when communicating with the API; default is TRUE.</p>
+<p class="description"><p>Provides a fluent interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+		<span class="method-name">
+			setSSL
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$useSSL</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$verifyPeer</span> = <span class="var-default">TRUE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$verifyHost</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$useSSL</span><span class="var-description">: useSSL Specifies whether to use SSL for API requests</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$verifyPeer</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$verifyHost</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTimeout" id="setTimeout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setTimeout</span> (line <span class="line-number">257</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the length of time (in seconds) to wait for a respnse from Twitter before timing out.</p>
+<p class="description"><p>Provides a fluent interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+		<span class="method-name">
+			setTimeout
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeout</span><span class="var-description">: Length of time (in seconds) before timeout</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodshowStatus" id="showStatus"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">showStatus</span> (line <span class="line-number">426</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a single status, specified by the id parameter below.</p>
+<p class="description"><p>The status's author will be returned inline.</p><p>Formats: xml, json</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			showStatus
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span><span class="var-description">: The numerical ID of the status you're trying to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodshowUser" id="showUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">showUser</span> (line <span class="line-number">684</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns extended information for a given user, specified by ID, screen name, or email.</p>
+<p class="description"><p>This information includes design settings, so third party developers can theme their widgets  according to a given user's preferences.</p><p>You must be properly authenticated to request the page of a protected user.</p><p>The API allows a user to be identified by ID, screen name, or email.  Any of these fields may be provided using the $id parameter.</p><p>A user ID must be passed as an integer.  A screen name or an email address must be passed as a string.</p><p>Show data for a user with an ID of 123: showUser(123)  Show data for a user with a screen name of 123: showUser(&quot;123&quot;)</p><p>These calls all return info for the user &quot;mattwilliamsnyc&quot;:</p><p>$twitter-&gt;showUser(12809672);</p><p>$twitter-&gt;showUser('mattwilliamsnyc');</p><p>$twitter-&gt;showUser('matt@mattwilliamsnyc.com');</p><p>Formats: xml, json</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			showUser
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$email</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID, screen name, or email address of a user</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$email</span><span class="var-description">: The email address of a user</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsuppressResponseCodes" id="suppressResponseCodes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">suppressResponseCodes</span> (line <span class="line-number">278</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Causes all responses to be returned with a 200 OK status code - even errors.</p>
+<p class="description"><p>This parameter exists to accommodate Flash and JavaScript applications running in browsers that intercept  all non-200 responses. If used, it's then the job of the client to determine error states by parsing the  response body. Use with caution, as those error messages may change.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter.html">Arc90_Service_Twitter</a></span>
+		<span class="method-name">
+			suppressResponseCodes
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$suppress</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$suppress</span><span class="var-description">: Suppress HTTP status codes</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtest" id="test"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">test</span> (line <span class="line-number">1470</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the string &quot;ok&quot; in the requested format with a 200 OK HTTP status code.</p>
+<p class="description"><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			test
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodunblock" id="unblock"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">unblock</span> (line <span class="line-number">1449</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Un-blocks the user specified in the ID parameter as the authenticating user.</p>
+<p class="description"><p>Returns the un-blocked user in the requested format when successful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://help.twitter.com/index.php?pg=kb.page&id=69">http://help.twitter.com/index.php?pg=kb.page&amp;id=69</a></li>
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			unblock
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$user</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$id</span><span class="var-description">: The ID or screen name of the user to unblock</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$user</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateDeliveryDevice" id="updateDeliveryDevice"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">updateDeliveryDevice</span> (line <span class="line-number">1074</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets which device Twitter delivers updates to for the authenticating user.</p>
+<p class="description"><p>Sending 'none' as the device parameter will disable IM or SMS updates.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			updateDeliveryDevice
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$device</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$device</span><span class="var-description">: Must be one of: sms, im, none</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateLocation" id="updateLocation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">updateLocation</span> (line <span class="line-number">1049</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the location attribute of the authenticating user, as displayed on the side of their profile  and returned in various API methods.</p>
+<p class="description"><p>Please note this is not normalized, geocoded, or translated to latitude/longitude at this time.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			updateLocation
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$location</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$location</span><span class="var-description">: The location of the user</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateProfile" id="updateProfile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">updateProfile</span> (line <span class="line-number">1236</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets values that users are able to set under the &quot;Account&quot; tab of their settings page.</p>
+<p class="description"><p>Only the parameters specified will be updated; to only update the &quot;name&quot; attribute, for example,  only include that parameter in your request.</p><p>At least one of the following parameters are required:</p><p><ul><li>name</li><li>email</li><li>url</li><li>location</li><li>description</li></ul></p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			updateProfile
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: One or more parameters to be updated</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateProfileBackgroundImage" id="updateProfileBackgroundImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">updateProfileBackgroundImage</span> (line <span class="line-number">1171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the authenticating user's profile background image.</p>
+<p class="description"><p>Image must be a valid GIF, JPG, or PNG image of less than 800 kilobytes in size.  Images with width larger than 2048 pixels will be scaled down.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			updateProfileBackgroundImage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$image</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$image</span><span class="var-description">: Local file path of the image to be uploaded</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateProfileColors" id="updateProfileColors"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">updateProfileColors</span> (line <span class="line-number">1109</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets one or more hex values that control the color scheme of the authenticating user's  profile page on twitter.com. These values are also returned in the /users/show API method.</p>
+<p class="description"><p>At least one of the following parameters are required:</p><p><ul><li>profile_background_color</li><li>profile_text_color</li><li>profile_link_color</li><li>profile_sidebar_fill_color</li><li>profile_sidebar_border_color</li></ul></p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			updateProfileColors
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: One or more color parameters to be updated</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateProfileImage" id="updateProfileImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">updateProfileImage</span> (line <span class="line-number">1144</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the authenticating user's profile image.</p>
+<p class="description"><p>Image must be a valid GIF, JPG, or PNG image of less than 700 kilobytes in size.  Images with width larger than 500 pixels will be scaled down.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			updateProfileImage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$image</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$image</span><span class="var-description">: Local file path of the image to be uploaded</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdateStatus" id="updateStatus"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">updateStatus</span> (line <span class="line-number">452</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the authenticating user's status. Requires the status parameter specified below.</p>
+<p class="description"><p>Returns the posted status in requested format when successful.</p><p>Formats: xml, json</p><p>API Limit: Not applicable</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			updateStatus
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$status</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$in_reply_to_status_id</span> = <span class="var-default">0</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$status</span><span class="var-description">: Text of your status update; must not exceed 140 characters</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$in_reply_to_status_id</span><span class="var-description">: ID of the status being replied to (if this is a reply)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodverifyCredentials" id="verifyCredentials"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">verifyCredentials</span> (line <span class="line-number">1006</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an HTTP 200 OK response code and a format-specific response if authentication was successful.</p>
+<p class="description"><p>Use this method to test if supplied user credentials are valid with minimal overhead.</p><p>Formats: xml, json, none</p><p>API Limit: 1 per request</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			verifyCredentials
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format (defaults to JSON)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_buildQueryString" id="_buildQueryString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_buildQueryString</span> (line <span class="line-number">1544</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Builds a query string from an array of parameters and values.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_buildQueryString
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$args</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$allowed</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$args</span><span class="var-description">: Parameter/value pairs to be evaluated for this query string</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$allowed</span><span class="var-description">: Optional array of allowed parameter keys</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_sendRequest" id="_sendRequest"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">_sendRequest</span> (line <span class="line-number">1490</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends an HTTP request to the Twitter API with optional Basic authentication.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			_sendRequest
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$auth</span> = <span class="var-default">TRUE</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span> = <span class="var-default">'GET'</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: Target URI for this request (relative to the API root)</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$auth</span><span class="var-description">: Specifies whether to use HTTP Basic authentication</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: Specifies the HTTP method to be used for this request</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: x-www-form-urlencoded data (or array) to be sent in a POST request body</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constAPI_URI" id="API_URI"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">API_URI</span>
+			 = <span class="const-default"> 'twitter.com'</span>
+			(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Entry point for the Twitter API</p>
+	
+	
+</div>
+<a name="constDEFAULT_ENCODING" id="DEFAULT_ENCODING"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DEFAULT_ENCODING</span>
+			 = <span class="const-default"> 'UTF-8'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Internal character encoding</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="http://us3.php.net/mb_internal_encoding">http://us3.php.net/mb_internal_encoding</a></li>
+			</ul>
+	
+	
+</div>
+<a name="constPATH_ACCT_BGIMAGE" id="PATH_ACCT_BGIMAGE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_BGIMAGE</span>
+			 = <span class="const-default"> '/account/update_profile_background_image'</span>
+			(line <span class="line-number">92</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_COLORS" id="PATH_ACCT_COLORS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_COLORS</span>
+			 = <span class="const-default"> '/account/update_profile_colors'</span>
+			(line <span class="line-number">90</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_DEVICE" id="PATH_ACCT_DEVICE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_DEVICE</span>
+			 = <span class="const-default"> '/account/update_delivery_device'</span>
+			(line <span class="line-number">89</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_END_SESS" id="PATH_ACCT_END_SESS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_END_SESS</span>
+			 = <span class="const-default"> '/account/end_session'</span>
+			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_IMAGE" id="PATH_ACCT_IMAGE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_IMAGE</span>
+			 = <span class="const-default"> '/account/update_profile_image'</span>
+			(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_LIMIT" id="PATH_ACCT_LIMIT"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_LIMIT</span>
+			 = <span class="const-default"> '/account/rate_limit_status'</span>
+			(line <span class="line-number">93</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_LOCATION" id="PATH_ACCT_LOCATION"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_LOCATION</span>
+			 = <span class="const-default"> '/account/update_location'</span>
+			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_PROFILE" id="PATH_ACCT_PROFILE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_PROFILE</span>
+			 = <span class="const-default"> '/account/update_profile'</span>
+			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_ACCT_VERIFY" id="PATH_ACCT_VERIFY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_ACCT_VERIFY</span>
+			 = <span class="const-default"> '/account/verify_credentials'</span>
+			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods">http://apiwiki.twitter.com/REST+API+Documentation#AccountMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_BLOCK_CREATE" id="PATH_BLOCK_CREATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_BLOCK_CREATE</span>
+			 = <span class="const-default"> '/blocks/create'</span>
+			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#BlockMethods">http://apiwiki.twitter.com/REST+API+Documentation#BlockMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_BLOCK_DESTROY" id="PATH_BLOCK_DESTROY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_BLOCK_DESTROY</span>
+			 = <span class="const-default"> '/blocks/destroy'</span>
+			(line <span class="line-number">110</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#BlockMethods">http://apiwiki.twitter.com/REST+API+Documentation#BlockMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_DM_DESTROY" id="PATH_DM_DESTROY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_DM_DESTROY</span>
+			 = <span class="const-default"> '/direct_messages/destroy'</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods">http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_DM_MESSAGES" id="PATH_DM_MESSAGES"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_DM_MESSAGES</span>
+			 = <span class="const-default"> '/direct_messages'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods">http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_DM_NEW" id="PATH_DM_NEW"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_DM_NEW</span>
+			 = <span class="const-default"> '/direct_messages/new'</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods">http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_DM_SENT" id="PATH_DM_SENT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_DM_SENT</span>
+			 = <span class="const-default"> '/direct_messages/sent'</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods">http://apiwiki.twitter.com/REST+API+Documentation#DirectMessageMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_FAV_CREATE" id="PATH_FAV_CREATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_FAV_CREATE</span>
+			 = <span class="const-default"> '/favorites/create'</span>
+			(line <span class="line-number">99</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#FavoriteMethods">http://apiwiki.twitter.com/REST+API+Documentation#FavoriteMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_FAV_DESTROY" id="PATH_FAV_DESTROY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_FAV_DESTROY</span>
+			 = <span class="const-default"> '/favorites/destroy'</span>
+			(line <span class="line-number">100</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#FavoriteMethods">http://apiwiki.twitter.com/REST+API+Documentation#FavoriteMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_FAV_FAVORITES" id="PATH_FAV_FAVORITES"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_FAV_FAVORITES</span>
+			 = <span class="const-default"> '/favorites'</span>
+			(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#FavoriteMethods">http://apiwiki.twitter.com/REST+API+Documentation#FavoriteMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_FRIEND_CREATE" id="PATH_FRIEND_CREATE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_FRIEND_CREATE</span>
+			 = <span class="const-default"> '/friendships/create'</span>
+			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#FriendshipMethods">http://apiwiki.twitter.com/REST+API+Documentation#FriendshipMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_FRIEND_DESTROY" id="PATH_FRIEND_DESTROY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_FRIEND_DESTROY</span>
+			 = <span class="const-default"> '/friendships/destroy'</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#FriendshipMethods">http://apiwiki.twitter.com/REST+API+Documentation#FriendshipMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_FRIEND_EXISTS" id="PATH_FRIEND_EXISTS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_FRIEND_EXISTS</span>
+			 = <span class="const-default"> '/friendships/exists'</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#FriendshipMethods">http://apiwiki.twitter.com/REST+API+Documentation#FriendshipMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_HELP_TEST" id="PATH_HELP_TEST"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_HELP_TEST</span>
+			 = <span class="const-default"> '/help/test'</span>
+			(line <span class="line-number">114</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#HelpMethods">http://apiwiki.twitter.com/REST+API+Documentation#HelpMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_NOTIF_FOLLOW" id="PATH_NOTIF_FOLLOW"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_NOTIF_FOLLOW</span>
+			 = <span class="const-default"> '/notifications/follow'</span>
+			(line <span class="line-number">104</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#NotificationMethods">http://apiwiki.twitter.com/REST+API+Documentation#NotificationMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_NOTIF_LEAVE" id="PATH_NOTIF_LEAVE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_NOTIF_LEAVE</span>
+			 = <span class="const-default"> '/notifications/leave'</span>
+			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#NotificationMethods">http://apiwiki.twitter.com/REST+API+Documentation#NotificationMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_SG_FOLLOWERS" id="PATH_SG_FOLLOWERS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_SG_FOLLOWERS</span>
+			 = <span class="const-default"> '/followers/ids'</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST-API-Documentation#SocialGraphMethods">http://apiwiki.twitter.com/REST-API-Documentation#SocialGraphMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_SG_FRIENDS" id="PATH_SG_FRIENDS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_SG_FRIENDS</span>
+			 = <span class="const-default"> '/friends/ids'</span>
+			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST-API-Documentation#SocialGraphMethods">http://apiwiki.twitter.com/REST-API-Documentation#SocialGraphMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_STATUS_DESTROY" id="PATH_STATUS_DESTROY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_STATUS_DESTROY</span>
+			 = <span class="const-default"> '/statuses/destroy'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods">http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_STATUS_FRIENDS" id="PATH_STATUS_FRIENDS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_STATUS_FRIENDS</span>
+			 = <span class="const-default"> '/statuses/friends_timeline'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods">http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_STATUS_MENTIONS" id="PATH_STATUS_MENTIONS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_STATUS_MENTIONS</span>
+			 = <span class="const-default"> '/statuses/mentions'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods">http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_STATUS_PUBLIC" id="PATH_STATUS_PUBLIC"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_STATUS_PUBLIC</span>
+			 = <span class="const-default"> '/statuses/public_timeline'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods">http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_STATUS_SHOW" id="PATH_STATUS_SHOW"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_STATUS_SHOW</span>
+			 = <span class="const-default"> '/statuses/show'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods">http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_STATUS_UPDATE" id="PATH_STATUS_UPDATE"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_STATUS_UPDATE</span>
+			 = <span class="const-default"> '/statuses/update'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods">http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_STATUS_USER" id="PATH_STATUS_USER"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_STATUS_USER</span>
+			 = <span class="const-default"> '/statuses/user_timeline'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods">http://apiwiki.twitter.com/REST+API+Documentation#StatusMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_USER_FOLLOWERS" id="PATH_USER_FOLLOWERS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_USER_FOLLOWERS</span>
+			 = <span class="const-default"> '/statuses/followers'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#UserMethods">http://apiwiki.twitter.com/REST+API+Documentation#UserMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_USER_FRIENDS" id="PATH_USER_FRIENDS"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_USER_FRIENDS</span>
+			 = <span class="const-default"> '/statuses/friends'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#UserMethods">http://apiwiki.twitter.com/REST+API+Documentation#UserMethods</a></p>
+	
+	
+</div>
+<a name="constPATH_USER_SHOW" id="PATH_USER_SHOW"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_USER_SHOW</span>
+			 = <span class="const-default"> '/users/show'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/REST+API+Documentation#UserMethods">http://apiwiki.twitter.com/REST+API+Documentation#UserMethods</a></p>
+	
+	
+</div>
+<a name="constSTATUS_MAXLENGTH" id="STATUS_MAXLENGTH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">STATUS_MAXLENGTH</span>
+			 = <span class="const-default"> 140</span>
+			(line <span class="line-number">118</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Maximum length (in number of characters) of status updates</p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 08 Sep 2009 22:02:58 -0400 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

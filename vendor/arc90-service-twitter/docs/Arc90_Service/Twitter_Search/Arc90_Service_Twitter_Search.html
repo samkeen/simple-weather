@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class Arc90_Service_Twitter_Search</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+						<script src="../../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../../media/images/plus.png";
+				imgMinus.src = "../../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> Arc90_Service_Twitter_Search</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Arc90_Service_Twitter_Search provides methods for interacting with the  <a href="http://apiwiki.twitter.com/Search+API+Documentation">Twitter Search API</a>.</p>
+<p class="description"><p>NOTE: Twitter has indicated that they plan to merge the stadard REST API and the search API  into a single, more RESTful API. In the meantime, this client provides an interface to the current  <a href="http://search.twitter.com/">Search API</a>.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Matt Williams &lt;<a href="mailto:matt@mattwilliamsnyc.com">matt@mattwilliamsnyc.com</a>&gt;</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2008 <a href="http://arc90.com">Arc90 Inc.</a>, Matt Williams</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---Arc90---Service---Twitter---Search.php.html">/lib/Arc90/Service/Twitter/Search.php</a> (line <span class="field">40</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#API_URI" title="details" class="const-name">API_URI</a> = 					<span class="var-type"> 'http://search.twitter.com'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_SEARCH" title="details" class="const-name">PATH_SEARCH</a> = 					<span class="var-type"> '/search'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../../media/images/Constant.png" alt=" " />
+					<a href="#PATH_TRENDS" title="details" class="const-name">PATH_TRENDS</a> = 					<span class="var-type"> '/trends'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_callback" title="details" class="var-name">$_callback</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_format" title="details" class="var-name">$_format</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$_formats" title="details" class="var-name">$_formats</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																			
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#_sendRequest" title="details" class="method-name">_sendRequest</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/StaticMethod.png" alt=" "/>
+					static 						<span class="method-result">void</span>
+										<a href="#_throwException" title="details" class="method-name">_throwException</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+									</div>
+																			
+				<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">Arc90_Service_Twitter_Search</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span> = <span class="var-default">''</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#search" title="details" class="method-name">search</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter_Search/Arc90_Service_Twitter_Search.html">Arc90_Service_Twitter_Search</a></span>
+										<a href="#setCallback" title="details" class="method-name">setCallback</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter_Search/Arc90_Service_Twitter_Search.html">Arc90_Service_Twitter_Search</a></span>
+										<a href="#setFormat" title="details" class="method-name">setFormat</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+									</div>
+															
+				<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+										<a href="#trends" title="details" class="method-name">trends</a>
+										()
+									</div>
+																											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_callback" id="$_callback"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_callback</span>
+						(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Callback function used to wrap JSON responses</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_format" id="$_format"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_format</span>
+			 = <span class="var-default"> 'json'</span>			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Response format</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_formats" id="$_formats"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$_formats</span>
+			 = <span class="var-default">array('json', 'atom')</span>			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Supported response formats</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method_sendRequest" id="_sendRequest"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static _sendRequest</span> (line <span class="line-number">289</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends a request to the Twitter Search API and returns a response object.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			_sendRequest
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$uri</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$uri</span><span class="var-description">: Target URI (including query string) for this request</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_throwException" id="_throwException"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/StaticMethod.png" />
+		<span class="method-title">static _throwException</span> (line <span class="line-number">314</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Throws an exception with a user-supplied message.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Search_Exception</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		static <span class="method-result">void</span>
+		<span class="method-name">
+			_throwException
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: Message to be provided with the exception</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">68</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a new Twitter Search API client.</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Search_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Arc90_Service_Twitter_Search</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">'json'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: Desired response format; defaults to JSON</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$callback</span><span class="var-description">: Callback function used to wrap JSON responses as JSONP</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsearch" id="search"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">search</span> (line <span class="line-number">197</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns tweets that match a specified query.</p>
+<p class="description"><p>You can use a variety of <a href="http://search.twitter.com/operators">search operators</a> in your query.</p><p>Here are a few examples:  <ul><li>Find tweets <strong>containing a word</strong>:
+     <a href="http://search.twitter.com/search.atom?q=twitter">http://search.twitter.com/search.atom?q=twitter</a></li><li>Find tweets <strong>from a user</strong>:
+     <a href="http://search.twitter.com/search.atom?q=from%3Aalexiskold">http://search.twitter.com/search.atom?q=from%3Aalexiskold</a></li><li>Find tweets <strong>to a user</strong>:
+     <a href="http://search.twitter.com/search.atom?q=to%3Atechcrunch">http://search.twitter.com/search.atom?q=to%3Atechcrunch</a></li><li>Find tweets <strong>referencing a user</strong>:
+     <a href="http://search.twitter.com/search.atom?q=%40mashable">http://search.twitter.com/search.atom?q=%40mashable</a></li><li>Find tweets <strong>containing a hashtag</strong>:
+     <a href="http://search.twitter.com/search.atom?q=%23haiku">http://search.twitter.com/search.atom?q=%23haiku</a></li><li>Combine any of the operators together:
+     <a href="http://search.twitter.com/search.atom?q=movie+%3A%29">http://search.twitter.com/search.atom?q=movie+%3A%29</a></li></ul></p><p>The search method also supports the following optional URL parameters:</p><p><ul><li><strong>lang</strong>:
+     restricts tweets to the given language, given by an ISO 639-1 code.
+     Ex: <a href="http://search.twitter.com/search.atom?lang=en&q=devo">http://search.twitter.com/search.atom?lang=en&amp;q=devo</a></li><li><strong>rpp</strong>:
+     the number of tweets to return per page, up to a max of 100.
+     Ex: <a href="http://search.twitter.com/search.atom?lang=en&q=devo&rpp=15">http://search.twitter.com/search.atom?lang=en&amp;q=devo&amp;rpp=15</a></li><li><strong>page</strong>:
+     the page number (starting at 1) to return, up to a max of roughly 1500 results (based on rpp * page)</li><li><strong>since_id</strong>: returns tweets with status ids greater than the given id.</li><li><strong>geocode</strong>:
+     returns tweets by users located within a given radius of the given latitude/longitude,
+     where the user's location is taken from their Twitter profile.
+     The parameter value is specified by &quot;latitide,longitude,radius&quot;, where radius units must be specified as
+     either &quot;mi&quot; (miles) or &quot;km&quot; (kilometers).
+     Ex: <a href="http://search.twitter.com/search.atom?geocode=40.757929%2C-73.985506%2C25km">http://search.twitter.com/search.atom?geocode=40.757929%2C-73.985506%2C25km</a>.
+     Note that you cannot use the near operator via the API to geocode arbitrary locations; however you can use
+     this geocode parameter to search near geocodes directly.</li><li><strong>show_user</strong>:
+     when &quot;true&quot;, adds &quot;&lt;user&gt;:&quot; to the beginning of the tweet.
+     This is useful for readers that do not display Atom's author field. The default is &quot;false&quot;.</li></ul></p><p>There are a few restrictions to the search method:</p><p><ul><li>We only provide access to data for about four months, older data may not be searchable.</li><li>As noted above, the near: operator does not work via the API
+     and instead must be replaced by the geocode parameter.</li><li>Query length is limited to 140 characters.</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			search
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: Search query</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: Optional query parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetCallback" id="setCallback"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setCallback</span> (line <span class="line-number">80</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a callback function used to wrap JSON responses as JSONP</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter_Search/Arc90_Service_Twitter_Search.html">Arc90_Service_Twitter_Search</a></span>
+		<span class="method-name">
+			setCallback
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$callback</span><span class="var-description">: Callback function used to wrap JSON responses as JSONP</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFormat" id="setFormat"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setFormat</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the default response format (may be JSON or ATOM);</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Arc90_Service_Twitter_Search_Exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter_Search/Arc90_Service_Twitter_Search.html">Arc90_Service_Twitter_Search</a></span>
+		<span class="method-name">
+			setFormat
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtrends" id="trends"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">trends</span> (line <span class="line-number">277</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the top ten queries that are currently trending on Twitter.</p>
+<p class="description"><p>The response includes the time of the request, the name of each trending topic,  and the url to the Twitter Search results page for that topic.  Currently, the only supported format for this method is JSON.  The callback parameter is supported, however.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../Arc90_Service/Twitter/Arc90_Service_Twitter_Response.html">Arc90_Service_Twitter_Response</a></span>
+		<span class="method-name">
+			trends
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constAPI_URI" id="API_URI"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">API_URI</span>
+			 = <span class="const-default"> 'http://search.twitter.com'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Entry point for the Twitter Search API</p>
+	
+	
+</div>
+<a name="constPATH_SEARCH" id="PATH_SEARCH"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_SEARCH</span>
+			 = <span class="const-default"> '/search'</span>
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/Search+API+Documentation#Search">http://apiwiki.twitter.com/Search+API+Documentation#Search</a></p>
+	
+	
+</div>
+<a name="constPATH_TRENDS" id="PATH_TRENDS"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PATH_TRENDS</span>
+			 = <span class="const-default"> '/trends'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description"><a href="http://apiwiki.twitter.com/Search+API+Documentation#Trends">http://apiwiki.twitter.com/Search+API+Documentation#Trends</a></p>
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 08 Sep 2009 22:02:58 -0400 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

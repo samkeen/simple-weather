@@ -26,7 +26,7 @@ class WeatherApi {
     public function  __construct(array $params=array()) {
         $this->params = array_merge(
             array(
-                'cache_path' => realpath(dirname(__FILE__).'/../cache'),
+                'cache_path' => dirname(dirname(__FILE__)).'/cache',
             ),
             $params
 
@@ -54,13 +54,16 @@ class WeatherApi {
     public function cache_weather($zip_code, $start_date, $num_days_to_retrieve,$force_overwrite=false) {
         $cache_file_name = "{$this->params['cache_path']}/{$zip_code}_".date('Y-m-d',$start_date)."_{$num_days_to_retrieve}.xml";
         if( $force_overwrite || ! file_exists($cache_file_name)) {
-            $api_uri = $this->build_api_uri($zip_code, date('Y-m-d',$start_date), $num_days_to_retrieve);
-            $weather_xml = file_get_contents($api_uri);
-            if( ! $weather_xml) {
-                throw new Exception("ERROR getting xml from API");
+            if(Util::file_exists_and_writable($this->params['cache_path'])) {
+                $api_uri = $this->build_api_uri($zip_code, date('Y-m-d',$start_date), $num_days_to_retrieve);
+                $weather_xml = file_get_contents($api_uri);
+                if( ! $weather_xml) {
+                    throw new Exception("ERROR getting xml from API");
+                }
+                Util::write_output_file($cache_file_name, $weather_xml);
             }
-            Util::write_output_file($cache_file_name, $weather_xml);
         }
+        
         return $cache_file_name;
     }
     /**
@@ -75,7 +78,7 @@ class WeatherApi {
         $this->digest_weather_xml($cache_file_name);
     }
     private function digest_weather_xml($weather_xml_path) {
-        var_dump($weather_xml_path);
+//        var_dump($weather_xml_path);
         $weather_xml = Util::digest_xml_file($weather_xml_path);
         $paths = $this->weather_data_paths;
         $hi_temps = $weather_xml->xpath($paths['hi_temp']);
@@ -99,17 +102,24 @@ class WeatherApi {
                 );
             }
         }
-        var_dump($this->weather);
+//        var_dump($this->weather);
     }
     
     public function description() {
         $desc = '';
+//        print_r($this->weather);
         foreach ($this->weather as $date => $weather) {
+
+            $date_desc = date('D_jS',$weather['start_time']);
             $intensity = !empty ($weather['weather_txt']['intensity'])?"{$weather['weather_txt']['intensity']} ":"";
-            $desc .= "{$date}:{$intensity}{$weather['weather_txt']['weather-type']}";
-            $desc .= " precip%day:{$weather['precip_probability_day']} precip%eve:{$weather['precip_probability_night']}";
+            $weather_type = isset($weather['weather_txt']['weather-type'])?$weather['weather_txt']['weather-type']:'';
+            if(empty($weather_type)) {
+                $weather_type = isset ($weather['weather_txt']['api_text'])?$weather['weather_txt']['api_text']:'';
+            }
+            $desc .= "{$date_desc}:{$intensity}{$weather_type}";
+            $desc .= " precip%day:{$weather['precip_probability_day']} precip%eve:{$weather['precip_probability_night']} ";
         }
-        return $desc;
+        return trim($desc);
     }
 
     

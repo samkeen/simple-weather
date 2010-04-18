@@ -1,0 +1,35 @@
+INTRODUCTION
+------------
+
+Arc90_Service_Twitter is a PHP library that supports interaction with the
+Twitter (http://twitter.com) API.
+
+DISCLAIMER
+----------
+
+Neither Arc90, Inc. nor Matt Williams are affiliated with,
+or are representatives of, Twitter in any capacity.
+
+Twitter provides the following resources to API users:
+
+REST API documentation: http://apiwiki.twitter.com/REST+API+Documentation
+Discussion Forum:       http://groups.google.com/group/twitter-development-talk
+List of known issues:   http://code.google.com/p/twitter-api/issues/list
+
+SUPPORT AND BUG REPORTS
+-----------------------
+
+Bug reports, as well as feature requests, may be submitted at:
+
+http://code.google.com/p/arc90-service-twitter/issues/list
+
+Alternatively, you may email the developer directly: matt@mattwilliamsnyc.com
+
+DOCUMENTATION
+-------------
+
+Documentation was generated using PhpDocumentor [http://www.phpdoc.org/].
+
+Documentation may be regenerated as follows (from the Arc90_Service_Twitter directory):
+
+phpdoc -d . -t docs -ti 'Arc90 Twitter API client library' -o HTML:frames:DOM/earthli 

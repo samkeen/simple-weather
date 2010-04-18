@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 22
+/svn/!svn/ver/74/trunk
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/5/trunk/LICENSE
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/5/trunk/INSTALL
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/74/trunk/CHANGELOG
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/33/trunk/README
+END
