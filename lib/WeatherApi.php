@@ -100,7 +100,9 @@ class WeatherApi {
                     'precip_probability_day' =>  isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null,
                     'precip_probability_night' => isset ($precip_probabilities[0])?(string)array_shift($precip_probabilities):null
                 );
+
             }
+            Util::write_output_file($processed_file, json_encode($this->weather));
         }
 //        var_dump($this->weather);
     }
