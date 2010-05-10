@@ -1,1 +1,7 @@
-#stub for the Translator Class
+<?php
+/*
+ *
+ */
+class Translator {
+
+}
